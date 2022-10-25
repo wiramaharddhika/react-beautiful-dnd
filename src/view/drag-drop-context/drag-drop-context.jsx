@@ -8,6 +8,7 @@ import useUniqueContextId, {
   reset as resetContextId,
 } from './use-unique-context-id';
 import { reset as resetUniqueIds } from '../use-unique-id';
+import autoScroll from '../../state/middleware/auto-scroll';
 
 type Props = {|
   ...Responders,
@@ -21,6 +22,7 @@ type Props = {|
   // See our [sensor api](/docs/sensors/sensor-api.md)
   sensors?: Sensor[],
   enableDefaultSensors?: ?boolean,
+  autoScroll?: boolean,
 |};
 
 // Reset any context that gets persisted across server side renders
@@ -51,6 +53,7 @@ export default function DragDropContext(props: Props) {
           onDragStart={props.onDragStart}
           onDragUpdate={props.onDragUpdate}
           onDragEnd={props.onDragEnd}
+          autoScroll={props.autoScroll}
         >
           {props.children}
         </App>

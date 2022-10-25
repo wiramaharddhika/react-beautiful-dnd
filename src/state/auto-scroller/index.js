@@ -10,6 +10,7 @@ export type Args = {|
   scrollWindow: (offset: Position) => void,
   scrollDroppable: (id: DroppableId, change: Position) => void,
   move: (args: MoveArgs) => mixed,
+  enabled: boolean,
 |};
 
 export default ({
@@ -30,7 +31,7 @@ export default ({
 
   const scroll = (state: State) => {
     // Only allowing auto scrolling in the DRAGGING phase
-    if (state.phase !== 'DRAGGING') {
+    if (!enabled || state.phase !== 'DRAGGING') {
       return;
     }
 
