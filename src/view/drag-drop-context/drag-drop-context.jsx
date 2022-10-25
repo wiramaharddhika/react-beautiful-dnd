@@ -8,7 +8,6 @@ import useUniqueContextId, {
   reset as resetContextId,
 } from './use-unique-context-id';
 import { reset as resetUniqueIds } from '../use-unique-id';
-import autoScroll from '../../state/middleware/auto-scroll';
 
 type Props = {|
   ...Responders,

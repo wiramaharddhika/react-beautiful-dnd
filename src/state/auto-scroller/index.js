@@ -17,6 +17,7 @@ export default ({
   scrollDroppable,
   scrollWindow,
   move,
+  enabled,
 }: Args): AutoScroller => {
   const fluidScroller: FluidScroller = createFluidScroller({
     scrollWindow,
